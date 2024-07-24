@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CODE by M.Ahmad</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        input, button {
+            background-color: #333333;
+            color: #ffffff;
+            border: none;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+        }
+        button {
+            cursor: pointer;
+        }
+        .code-container {
+            background-color: black;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .comment { color: green; }
+        .keyword { color: purple; }
+        .bracket { color: yellow; }
+        .number { color: orange; }
+        .string { color: cyan; }
+    </style>
+</head>
+<body>
+    
+
+    <h1>JavaScript Code</h1>
+    <div class="code-container">
+        <pre id="code">
+            <span class="comment">// Prompt the user to enter values</span>
+            <span class="keyword">var</span> num1 <span class="keyword">=</span> prompt(<span class="string">"Enter first value:"</span>);
+            <span class="keyword">var</span> num2 <span class="keyword">=</span> prompt(<span class="string">"Enter second value:"</span>);
+            <span class="keyword">var</span> opt <span class="keyword">=</span> prompt(<span class="string">"Enter the Operator: "</span>);
+
+            <span class="comment">// Convert the string inputs to numbers</span>
+            num1 <span class="keyword">=</span> <span class="keyword">Number</span>(num1);
+            num2 <span class="keyword">=</span> <span class="keyword">Number</span>(num2);
+
+            <span class="keyword">if</span>(opt <span class="keyword">==</span> <span class="string">'/'</span>){
+                <span class="comment">// Calculate the div</span>
+                <span class="keyword">var</span> div <span class="keyword">=</span> num1 <span class="keyword">/</span> num2;
+                <span class="comment">// Display the result</span>
+                document.write(<span class="string">"Division is: "</span> , sub);
+            }
+
+            <span class="keyword">if</span>(opt <span class="keyword">==</span> <span class="string">'-'</span>){
+                <span class="comment">// Calculate the sub</span>
+                <span class="keyword">var</span> sub <span class="keyword">=</span> num1 <span class="keyword">-</span> num2;
+                <span class="comment">// Display the result</span>
+                document.write(<span class="string">"Subtraction is: "</span> , sub);
+            }
+
+            <span class="keyword">if</span>(opt <span class="keyword">==</span> <span class="string">'*'</span>){
+                <span class="comment">// Calculate the mul</span>
+                <span class="keyword">var</span> mul <span class="keyword">=</span> num1 <span class="keyword">*</span> num2;
+                <span class="comment">// Display the result</span>
+                document.write(<span class="string">"Multiplication is: "</span> , mul);
+            }
+
+            <span class="keyword">if</span>(opt <span class="keyword">==</span> <span class="string">'+'</span>){
+                <span class="comment">// Calculate the sum</span>
+                <span class="keyword">var</span> sum <span class="keyword">=</span> num1 <span class="keyword">+</span> num2;
+                <span class="comment">// Display the result</span>
+                document.write(<span class="string">"SUM: "</span> , sum);
+            }
+        </pre>
+    </div>
+<a href="output.html">
+    <button>Show JS Code Output</button></a>
+    <pre id="jsCodeOutput" style="display: none;"></pre>
+
+    <script>
+        function showOutput(outputId) {
+            var output = '';
+            if (outputId === 'calculatorOutput') {
+                output = document.getElementById('result').innerText;
+            } else if (outputId === 'jsCodeOutput') {
+                // This part of the code will only simulate the output of the JS code display,
+                // as `document.write` is not used here and prompt cannot be used in the button click.
+                output = 'This output simulates what the original JS code would produce.';
+            }
+            document.getElementById(outputId).style.display = 'block';
+            document.getElementById(outputId).innerText = output;
+        }
+    </script>
+</body>
+</html>

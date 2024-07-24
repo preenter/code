@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CODE by M.Ahmad</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background-color: #1a1a1a;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            width: 300px;
+            text-align: center;
+        }
+        .login-container h1 {
+            margin-bottom: 20px;
+        }
+        .login-container input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 4px;
+        }
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            background-color: #333;
+            color: #fff;
+        }
+        .login-container input[type="submit"] {
+            background-color: #ff9900;
+            color: #fff;
+            cursor: pointer;
+        }
+        .login-container input[type="submit"]:hover {
+            background-color: #e68a00;
+        }
+        .login-container .message {
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <h1>WELCOME CODER'S <br> <b><i><u>CODE</u></i></b> by <u><b><i>M.Ahmad</i></b> </u></h1>
+    <div class="login-container">
+        <h1>Login</h1>
+        <form id="loginForm">
+            <input type="text" id="username" name="username" placeholder="Username"><br>
+            <input type="password" id="password" name="password" placeholder="Password"><br>
+            <input type="submit" value="Login">
+        </form>
+        <div class="message" id="message"></div>
+    </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            var message = document.getElementById('message');
+            if (username === "password" && password === "username") {
+                message.style.color = "green";
+                message.textContent = "Login successful!";
+                setTimeout(function() {
+                    window.location.href = "buttons.html";
+                }, 1000);
+            } else {
+                message.style.color = "red";
+                message.textContent = "Incorrect username or password.";
+            }
+        });
+    </script>
+</body>
+</html>

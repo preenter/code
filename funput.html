@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CODE by M.Ahmad</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        input, button {
+            background-color: #333333;
+            color: #ffffff;
+            border: none;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+        }
+        button {
+            cursor: pointer;
+        }
+        .code-container {
+            background-color: black;
+            padding: 20px;
+            margin-top: 20px;
+            color: white;
+            font-family: monospace;
+        }
+        .comment { color: green; }
+        .keyword { color: purple; }
+        .string { color: cyan; }
+    </style>
+</head>
+<body>
+    <h1>Basic Calculator</h1>
+    <input type="text" id="num1" placeholder="Enter first number:" required>
+    <input type="text" id="num2" placeholder="Enter second number:" required>
+    <input type="text" id="opt" placeholder="Enter operator (+, -, *, /):" required>
+    <button onclick="calculate()">Calculate</button>
+    <p id="result">Result will be displayed here.</p>
+
+    <h1>JavaScript Code</h1>
+    <div class="code-container">
+        <pre id="code">
+<span class="keyword">&lt;script&gt;</span>
+<span class="comment">// Function to perform calculation</span>
+<span class="keyword">function</span> calculate() {
+    <span class="keyword">var</span> num1 = <span class="keyword">Number</span>(document.getElementById(<span class="string">'num1'</span>).value);
+    <span class="keyword">var</span> num2 = <span class="keyword">Number</span>(document.getElementById(<span class="string">'num2'</span>).value);
+    <span class="keyword">var</span> opt = document.getElementById(<span class="string">'opt'</span>).value;
+    <span class="keyword">var</span> result;
+
+    <span class="keyword">switch</span> (opt) {
+        <span class="keyword">case</span> <span class="string">'+'</span>:
+            result = add(num1, num2);
+            <span class="keyword">break</span>;
+        <span class="keyword">case</span> <span class="string">'-'</span>:
+            result = subtract(num1, num2);
+            <span class="keyword">break</span>;
+        <span class="keyword">case</span> <span class="string">'*'</span>:
+            result = multiply(num1, num2);
+            <span class="keyword">break</span>;
+        <span class="keyword">case</span> <span class="string">'/'</span>:
+            result = divide(num1, num2);
+            <span class="keyword">break</span>;
+        <span class="keyword">default</span>:
+            result = <span class="string">'Invalid operator'</span>;
+    }
+
+    document.getElementById(<span class="string">'result'</span>).innerText = <span class="string">Result: ${result}</span>;
+}
+
+<span class="keyword">function</span> add(a, b) {
+    <span class="keyword">return</span> a + b;
+}
+
+<span class="keyword">function</span> subtract(a, b) {
+    <span class="keyword">return</span> a - b;
+}
+
+<span class="keyword">function</span> multiply(a, b) {
+    <span class="keyword">return</span> a * b;
+}
+
+<span class="keyword">function</span> divide(a, b) {
+    <span class="keyword">return</span> a / b;
+}
+<span class="keyword">&lt;/script&gt;</span>
+        </pre>
+    </div>
+
+    <h1>Body Section</h1>
+    <div class="code-container">
+        <pre id="bodyCode">
+<span class="keyword">&lt;body&gt;</span>
+    &lt;h1&gt;Basic Calculator&lt;/h1&gt;
+    &lt;input type="text" id="num1" placeholder="Enter first number:" required&gt;
+    &lt;input type="text" id="num2" placeholder="Enter second number:" required&gt;
+    &lt;input type="text" id="opt" placeholder="Enter operator (+, -, *, /):" required&gt;
+    &lt;button onclick="calculate()"&gt;Calculate&lt;/button&gt;
+    &lt;p id="result"&gt;Result will be displayed here.&lt;/p&gt;
+<span class="keyword">&lt;/body&gt;</span>
+        </pre>
+    </div>
+
+    <script>
+        function calculate() {
+            var num1 = Number(document.getElementById('num1').value);
+            var num2 = Number(document.getElementById('num2').value);
+            var opt = document.getElementById('opt').value;
+            var result;
+
+            switch (opt) {
+                case '+':
+                    result = add(num1, num2);
+                    break;
+                case '-':
+                    result = subtract(num1, num2);
+                    break;
+                case '*':
+                    result = multiply(num1, num2);
+                    break;
+                case '/':
+                    result = divide(num1, num2);
+                    break;
+                default:
+                    result = 'Invalid operator';
+            }
+
+            document.getElementById('result').innerText = `Result: ${result}`;
+        }
+
+        function add(a, b) {
+            return a + b;
+        }
+
+        function subtract(a, b) {
+            return a - b;
+        }
+
+        function multiply(a, b) {
+            return a * b;
+        }
+
+        function divide(a, b) {
+            return a / b;
+        }
+    </script>
+</body>
+</html>
